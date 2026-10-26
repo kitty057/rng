@@ -1,4 +1,7 @@
 #include <sodium.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sodium.h>
 int main(int argc,char **argv) {
     if (argc<2) {
         printf("cannot run without args\n");
