@@ -1,3 +1,4 @@
+#define SODIUM_STATIC
 #include <sodium.h>
 #include <stdio.h>
 #include <stdlib.h>
