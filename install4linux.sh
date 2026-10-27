@@ -32,7 +32,7 @@ git clone https://github.com/kitty057/rng.git
 cd rng
 gcc -O3 rng.c -o $HOME/.local/bin/rng/rng -static -L/usr/local/lib -lsodium
 if [[ -f "$HOME/.bashrc" ]]; then 
-    echo "export PATH=\"$PATH:$HOME/.local/bin/rng/\"" >> ~/.bashrc
+    echo "export PATH=\"\$PATH:\$HOME/.local/bin/rng/\"" >> ~/.bashrc
 elif [[ -f "$HOME/.zshrc" ]]; then 
-    echo "export PATH=\"$PATH:$HOME/.local/bin/rng/\"" >> ~/.zshrc
+    echo "export PATH=\"\$PATH:\$HOME/.local/bin/rng/\"" >> ~/.zshrc
 fi
