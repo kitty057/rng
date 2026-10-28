@@ -11,9 +11,10 @@ int main(int argc,char **argv) {
         printf("sodium didnt initialise\n");
         exit(1);
     }
-    int max=atoi(argv[1]);
+    char *e;
+    long max=strtol(argv[1],&e,10);
     if (max<=0) {
-        printf("max cannot be zero. max was %d\n",max);
+        printf("max cannot be zero. max was %lu\n",max);
         exit(3);
     }
     printf("%u\n",randombytes_uniform((uint32_t)max+1));
