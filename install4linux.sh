@@ -12,6 +12,10 @@ if ! command -v gcc &> /dev/null; then
     echo "install gcc"
     exit 1
 fi
+if ! command -v git &> /dev/null; then 
+    echo "install git" 
+    exit 1 
+fi
 libst="$HOME/libsodium-temp"
 mkdir -p $libst
 cd $libst
@@ -26,13 +30,13 @@ tar -xzf $(ls $libst|grep -i libsodium|grep -i .tar.gz)
 cd $(ls $libst|grep -i libsodium|grep -vi .tar.gz)
 ./configure
 make
-sudo make install
+make install
 cd $libst
 git clone https://github.com/kitty057/rng.git
 cd rng
 gcc -O3 rng.c -o $HOME/.local/bin/rng/rng -static -L/usr/local/lib -lsodium
 if [[ -f "$HOME/.bashrc" ]]; then 
-    echo "export PATH=\"\$PATH:\$HOME/.local/bin/rng/\"" >> ~/.bashrc
+    echo 'export PATH="$PATH:$HOME/.local/bin/rng/"' >> ~/.bashrc
 elif [[ -f "$HOME/.zshrc" ]]; then 
-    echo "export PATH=\"\$PATH:\$HOME/.local/bin/rng/\"" >> ~/.zshrc
+    echo 'export PATH="$PATH:$HOME/.local/bin/rng/"' >> ~/.zshrc
 fi
