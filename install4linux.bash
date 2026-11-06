@@ -21,3 +21,5 @@ if [[ -f "$HOME/.bashrc" ]]; then
 elif [[ -f "$HOME/.zshrc" ]]; then
     echo 'export PATH="$PATH:$HOME/.local/bin/rng/"' >> ~/.zshrc
 fi
+echo 'done!'
+echo ''
