@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/random.h>
-#include <ccf.h>
+#include "ccf.h"
 #include <ctype.h>
 __uint128_t strtou128(const char *in) {
     __uint128_t out = 0;
